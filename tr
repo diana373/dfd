@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+class Chet
+{
+    int a, min, max, a2;
+public:
+    Chet()
+    {
+        int a2 = 0, min = 0, max = 100;
+    }
+    ~Chet()
+    {
+        
+    }
+        
+    
+    
+    void Inpmin(int);
+    void Inpmax(int);
+    void Plus();
+    void Show();
+}obj;
+void Chet::Plus()
+{
+    a++;
+    if (a >= (max + 1))
+    {
+        a2++;
+        a = min;
+    }
+
+}
+void Chet::Inpmin(int b)
+{
+    min = b;
+    a = min;
+}
+void Chet::Inpmax(int d)
+{
+    max = d;
+}
+
+void Chet::Show()
+{
+    cout << a2 << " : " << a << endl;
+}
+void main()
+{
+    
+    int omax = 0, omin = 0, key = 0;
+    do
+    {
+        cout << "enter min";
+        cin >> omin;
+        cout << "enter max ";
+        cin >> omax;
+       
+    } while ((omax < omin) || (omin == omax));
+    obj.Inpmin(omin);
+    obj.Inpmax(omax);
+   
+  
+    do
+    {
+        cout << "1.increment the counter by 1 \n2. increment\n0. exit\n";
+        cin >> key;
+        switch (key)
+        {
+        case 1:
+            obj.Plus();
+            
+            break;
+        case 2:
+            obj.Show();
+            
+            break;
+       
+       
+        }
+    }
+
+    while (key != 0);
+}
